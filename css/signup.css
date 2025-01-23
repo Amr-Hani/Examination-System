@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.signup {
+  height: 100vh;
+}
+.signup .container .box {
+  background-color: aqua;
+  border-radius: 16px;
+}
+
+.signup input {
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid gray;
+  width: 300px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.signup button {
+  padding: 8px;
+  width: 300px;
+  min-width: 200px;
+  max-width: 300px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+.signup button:hover {
+  background-color: rgb(199, 197, 197);
+}
+.signup .box p {
+  color: red;
+}
