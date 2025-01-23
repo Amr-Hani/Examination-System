@@ -7,11 +7,54 @@
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css.map" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <div class="signup d-flex align-items-center justify-content-center">
+      <div class="container">
+        <div class="box">
+          <div
+            class="col-lg-6 d-flex align-items-center flex-column justify-content-center gap-2 p-4"
+          >
+            <div id="firstname" class="d-flex flex-column gap-1">
+              <label>First Name</label>
+              <input type="text" placeholder="First Name" />
+              <p></p>
+            </div>
+            <div id="lastname" class="d-flex flex-column gap-1">
+              <label>Last Name</label>
+              <input type="text" placeholder="Last Name" />
+              <p></p>
+            </div>
+            <div id="email" class="d-flex flex-column gap-1">
+              <label>Email</label>
+              <input type="text" placeholder="Email" />
+              <p></p>
+            </div>
+            <div id="password" class="d-flex flex-column gap-1">
+              <label>Password</label>
+              <input type="password" placeholder="Password" />
+              <p></p>
+            </div>
+            <div id="repassword" class="d-flex flex-column gap-1">
+              <label>Re_Enter Password</label>
+              <input type="password" placeholder="Re_Enter Password" />
+              <p></p>
+            </div>
+            <button id="submit">SignUp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/all.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js.map"></script> -->
+    <script src="js/signup.js"></script>
   </body>
 </html>
