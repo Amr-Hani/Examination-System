@@ -45,9 +45,11 @@ form.addEventListener('submit' , function(e){
     let valid = validData() ;
     e.preventDefault() ;
 
+    console.log(currEmail , currPassword)
+
     if(valid){
         errorMessage('emailError' , '') ;
         errorMessage('passwordError' , '') ;
-        location.replace('');
+        location.replace('../Start.html');
     }
 })
