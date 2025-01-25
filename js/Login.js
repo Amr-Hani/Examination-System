@@ -60,13 +60,6 @@
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let form = document.getElementById("logIn");
-
-// let currEmail = localStorage.getItem("user.email");
-// let currPassword = localStorage.getItem("user.password");
-// let emailRegExp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
-// let passwordRegExp =
-//   "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[!@#$%^&*])[A-Za-zd!@#$%^&*]{8,}$";
-
 function errorMessage(element, Message) {
   let error = document.getElementsByClassName(element)[0];
   error.textContent = Message;
@@ -75,47 +68,36 @@ function errorMessage(element, Message) {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  // let valid = validData();
-  // console.log(currEmail, currPassword);
-  // if (valid) {
-  //   errorMessage("emailError", "");
-  //   errorMessage("passwordError", "");
-  //   location.reload("./Start.html");
-  // }
 });
-function validdataEmptyEmail(email) {
-  if (email == "") {
-    errorMessage("emailError", "This field is required");
-  }
-}
-function validataEmail(email, currentEmail) {
-  if (currentEmail != email) {
-    errorMessage("emailError", "Email is not valid");
-  }
-}
-function validateEmptyPassword(pass) {
-  if (pass === "") {
-    errorMessage("passwordError", "This field is required");
-  }
-}
-function validatePassword(pass, currentPass) {
-  if (currentPass != pass) {
-    errorMessage("passwordError", "Password is not valid");
-  }
-}
+
 let submit = document.querySelector("button[type='submit']");
 let users = JSON.parse(localStorage.getItem("user"));
 console.log(users);
-submit.addEventListener("click", function () {
-  let user = users.filter((element) => element.email == email.value)[0];
-  if (user) {
-    validataEmail(email.value, user.email);
-    validatePassword(password.value, user.password);
-  }
-  validateEmptyPassword(password.value);
-  validdataEmptyEmail(email.value);
 
-  if (user.email == email.value && user.password == password.value) {
-    location.replace("./Start.html");
+submit.addEventListener("click", function () {
+  console.log("amr");
+
+  let user = users.filter((element) => element.email == email.value)[0];
+  if (email.value == "") {
+    errorMessage("emailError", "This field is required");
   }
+  if (password.value == "") {
+    errorMessage("passwordError", "This field is required");
+  }
+
+  if (user) {
+    if (user.email != email.value) {
+      errorMessage("emailError", "Email is not valid");
+    }
+    if (user.password != password.value) {
+      errorMessage("passwordError", "Password is not valid");
+    }
+  } else {
+    errorMessage("emailError", "Email is not valid");
+    errorMessage("passwordError", "Password is not valid");
+  }
+  if (user)
+    if (user.email == email.value && user.password == password.value) {
+      location.replace("../Start.html");
+    }
 });

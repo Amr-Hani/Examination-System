@@ -115,6 +115,8 @@ $("#submit").click(function () {
     //   }
     //   localStorage.setItem("user", JSON.stringify(users));
     // });
+
+    location.replace("../Login.html");
   }
 });
 
