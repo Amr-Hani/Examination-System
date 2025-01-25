@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css.map" />
-    <link rel="stylesheet" href="./css/Login.css">
-</head>
-<body>
-    <div class="container d-flex justify-content-between mt-5 align-items-center rounded-5 login">
-        <div class="col-lg-6 login-img">
-            <img src="./Images/login.gif" alt="">
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center p-5 login-form">
-            <h1 class="title">Log In</h1>
-            <form method="post" id="logIn">
-                <label for="email">Email</label>
-                <input type="email" name="email" placeholder="Enter Your Email" id="email">
-                <p class="emailError" ></p>
+    <link rel="stylesheet" href="./css/Login.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-between mt-5 align-items-center rounded-5 login"
+    >
+      <div class="col-lg-6 login-img">
+        <img src="./Images/login.gif" alt="" />
+      </div>
+      <div
+        class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center p-5 login-form"
+      >
+        <h1 class="title">Log In</h1>
+        <form method="post" id="logIn">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            id="email"
+          />
+          <p class="emailError"></p>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter Password" id="password">
-                <p class="passwordError"></p>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            id="password"
+          />
+          <p class="passwordError"></p>
 
-                <button type="submit">Sign In</button>
-            </form>
-            <div class="signin">
-                <p>Don't have an account ?</p>
-                <a href="index.html"> Sign Up</a>
-            </div>
+          <button type="submit">Sign In</button>
+        </form>
+        <div class="signin">
+          <p>Don't have an account ?</p>
+          <a href="index.html"> Sign Up</a>
         </div>
+      </div>
     </div>
     <script src="js/all.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="./js/Login.js"></script>
-</body>
+  </body>
 </html>
