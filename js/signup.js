@@ -11,6 +11,8 @@ let amr = localStorage.getItem("user");
 if (amr) users = [...JSON.parse(amr)];
 console.log(users);
 
+let loginPage = document.getElementById("login-page");
+
 $("#submit").click(function () {
   if (!nameRegex.test(firstName.val())) {
     firstName.css("border", "2px solid red");
@@ -123,3 +125,7 @@ $("#submit").click(function () {
 function validateRePassword(password, rePassword) {
   return password === rePassword;
 }
+
+loginPage.addEventListener("click", function () {
+  location.replace("../Login.html");
+});

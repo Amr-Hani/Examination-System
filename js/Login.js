@@ -43,11 +43,6 @@
 
 // form.addEventListener("submit", function (e) {
 //   e.preventDefault();
-// });
-
-// let submit = document.querySelector("button[type='submit']");
-// submit.addEventListener("click", function () {
-//   console.log("Amr");
 //   let valid = validData();
 //   console.log(currEmail, currPassword);
 //   if (valid) {
@@ -60,6 +55,8 @@
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let form = document.getElementById("logIn");
+let signupPage = document.getElementById("signup-page");
+
 function errorMessage(element, Message) {
   let error = document.getElementsByClassName(element)[0];
   error.textContent = Message;
@@ -100,4 +97,8 @@ submit.addEventListener("click", function () {
     if (user.email == email.value && user.password == password.value) {
       location.replace("../Start.html");
     }
+});
+
+signupPage.addEventListener("click", function () {
+  location.replace("../index.html");
 });

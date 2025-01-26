@@ -11,8 +11,8 @@ body {
   background-color: rgb(206, 171, 212);
 }
 
-.container{
-    width: 75% ;
+.container {
+  width: 75%;
 }
 
 .login {
@@ -22,7 +22,7 @@ body {
   /* width: 65%; */
   /* margin: 100px auto; */
   /* border-radius: 25px; */
-  padding: 0 ;
+  padding: 0;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -95,16 +95,16 @@ body {
   color: white;
 }
 
-.signin a {
+.signin span {
   text-decoration: none;
   color: rgb(169, 67, 187);
   font-size: 17px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 950px) {
-    .login-img {
-      display: none;
-    }
+  .login-img {
+    display: none;
   }
-  
+}

@@ -70,11 +70,12 @@
   display: flex;
 }
 
-.login a {
+.login span {
   text-decoration: none;
   color: rgb(169, 67, 187);
   font-size: 17px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .signup-img {
