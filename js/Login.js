@@ -95,6 +95,7 @@ submit.addEventListener("click", function () {
   }
   if (user)
     if (user.email == email.value && user.password == password.value) {
+      // localStorage.setItem("logined", user.email);
       location.replace("../Start.html");
     }
 });

@@ -16,7 +16,10 @@ function updateTime() {
   if (!finishTime) {
     clearInterval(intervalId);
     localStorage.removeItem("FinishTime");
-    displayTime.html("Time's up!"); // here should aslo navigate to result page
+    displayTime.html("Time's up!");
+    // here should aslo navigate to result page
+    // clearAllLocalStorage();
+    // navigateTo(""); // navigate her to time out screens
     return; // 3shan mkmlsh ba2y el function
   }
 
@@ -29,6 +32,8 @@ function updateTime() {
     clearInterval(intervalId);
     localStorage.removeItem("FinishTime"); // Clear end time when timer is done
     displayTime.html("Time's up!"); // navigate to result page
+    //  clearAllLocalStorage();
+    // navigateTo(""); // navigate her to time out screens
   } else {
     let minutes = Math.floor(remainingTime / 60);
     let seconds = remainingTime % 60;
@@ -64,8 +69,8 @@ function initTimer() {
   }
 }
 
-//////////////////////////////////////////////////////
-let currentQuestions;
+//////////////////////////////////////////////////////////////
+let currentQuestions = [];
 
 let question = document.getElementsByClassName("question")[0];
 let chooseA = document.getElementsByClassName("Q1")[0];
@@ -81,11 +86,24 @@ function displayQuestions(questionIndex) {
   chooseC.innerHTML = currentQuestions[questionIndex].c;
   chooseD.innerHTML = currentQuestions[questionIndex].d;
   counter.innerHTML = `${questionIndex + 1}`;
-
-  chooseA.classList.remove("active");
-  chooseB.classList.remove("active");
-  chooseC.classList.remove("active");
-  chooseD.classList.remove("active");
+  let answer = localStorage.getItem(questionIndex);
+  removeActiv();
+  if (answer) {
+    switch (answer) {
+      case "A":
+        chooseA.classList.add("active");
+        break;
+      case "B":
+        chooseB.classList.add("active");
+        break;
+      case "C":
+        chooseC.classList.add("active");
+        break;
+      case "D":
+        chooseD.classList.add("active");
+        break;
+    }
+  }
 }
 /************************************************************************************************************************ */
 let prevQuestion = document.getElementsByClassName("prev")[0];
@@ -113,19 +131,17 @@ let questionChoicess = localStorage.getItem("questionFlags");
 if (questionChoicess) {
   questionFlags = new Set(JSON.parse(questionChoicess));
 }
-
-console.log(questionFlags);
 showMarked(questionFlags);
 $(".head div").click(function () {
   console.log(questionIndex);
-
   questionFlags.add(questionIndex);
-  let x = JSON.stringify(Array.from(questionFlags));
+  let questionArr = JSON.stringify(Array.from(questionFlags));
   console.log(questionFlags);
-  console.log(x);
-  localStorage.setItem("questionFlags", x);
+  console.log(questionArr);
+  localStorage.setItem("questionFlags", questionArr);
   showMarked(questionFlags);
 });
+
 function showMarked(questionFlags) {
   $(".marked").remove();
   questionFlags.forEach((element) => {
@@ -146,8 +162,8 @@ $(".markedQuestion").on("click", "div svg", function () {
   console.log(currentIndex);
   questionFlags.delete(currentIndex - 1);
   this.parentElement.parentElement.remove();
-  let x = JSON.stringify(Array.from(questionFlags));
-  localStorage.setItem("questionFlags", x);
+  let questionArr = JSON.stringify(Array.from(questionFlags));
+  localStorage.setItem("questionFlags", questionArr);
 });
 
 $(".markedQuestion").on("click", ".marked", function (e) {
@@ -158,7 +174,8 @@ $(".markedQuestion").on("click", ".marked", function (e) {
   if (this != this.children[1].children[0]) {
     let currentIndex = Number($(this.children[1]).attr("name"));
     questionIndex = currentIndex - 1;
-    displayQuestions(currentIndex - 1);
+    displayQuestions(questionIndex);
+    window.localStorage.setItem("questionIndex", questionIndex);
   }
 });
 
@@ -170,13 +187,72 @@ let currentChoice = null;
 
 chooseAnswer.addEventListener("click", function (e) {
   console.log(questionIndex);
-  // alaa[questionIndex] = e.target.innerText;
   if (this !== e.target) {
-    prev = currentChoice;
-    currentChoice = e.target;
-    if (prev) {
-      prev.classList.remove("active");
+    removeActiv();
+    e.target.classList.add("active");
+  }
+  localStorage.setItem(questionIndex, e.target.getAttribute("name"));
+  currentQuestions[questionIndex].chosen_answer = e.target.innerText;
+  localStorage.setItem("QuestionsArr", JSON.stringify(currentQuestions));
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////
+let result = 0;
+$("#submit").click(() => {
+  console.log("Amr");
+  currentQuestions.forEach((element) => {
+    if (element.chosen_answer == element.right_answer) {
+      result++;
     }
-    e.target.classList.toggle("active");
+  });
+  localStorage.setItem("result", result);
+  clearAllLocalStorage();
+  if (result >= 6) {
+    // navigateTo(""); // navigate her to result screens (pass)
+  } else {
+    // navigateTo(""); // navigate her to result screens (pass)
   }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////
+function clearAnswerQuestionsLocaleStoarge() {
+  for (let i = 0; i < 10; i++) {
+    localStorage.removeItem(i);
+  }
+}
+function clearTimeLocaleStoarge() {
+  localStorage.removeItem("FinishTime");
+}
+
+function clearQuestionsArrayLocaleStoarge() {
+  localStorage.removeItem("QuestionsArr");
+}
+function clearQuestionsFlagLocaleStoarge() {
+  localStorage.removeItem("questionFlags");
+}
+function clearQuestionsIndexLocaleStoarge() {
+  localStorage.removeItem("questionIndex");
+}
+
+function removeActiv() {
+  chooseA.classList.remove("active");
+  chooseB.classList.remove("active");
+  chooseC.classList.remove("active");
+  chooseD.classList.remove("active");
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+// clearLocaleStoarge();
+///////////////////////////////////////////////////////////////////////////////////////////
+function clearAllLocalStorage() {
+  clearAnswerQuestionsLocaleStoarge();
+  clearTimeLocaleStoarge();
+  clearQuestionsArrayLocaleStoarge();
+  clearQuestionsFlagLocaleStoarge();
+  clearQuestionsIndexLocaleStoarge();
+}
+function navigateTo(screen) {
+  location.replace(screen);
+}
+///////////////////////////////////////////////////////////////////////////////////////////

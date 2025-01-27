@@ -34,10 +34,10 @@
                 <div><i class="fa-regular fa-flag"></i></div>
               </div>
               <div class="choices d-flex flex-column gap-3">
-                <div class="Q1 p-2"></div>
-                <div class="Q2 p-2"></div>
-                <div class="Q3 p-2"></div>
-                <div class="Q4 p-2"></div>
+                <div name="A" class="Q1 p-2"></div>
+                <div name="B" class="Q2 p-2"></div>
+                <div name="C" class="Q3 p-2"></div>
+                <div name="D" class="Q4 p-2"></div>
               </div>
               <div class="d-flex justify-content-center gap-3">
                 <div class="prev">
@@ -49,10 +49,13 @@
                 </div>
               </div>
             </div>
+            <div id="submit">
+              <button type="submit">Submit</button>
+            </div>
           </div>
           <div class="sideBar col-lg-3 col-md-3 p-3">
             <h3 class="text-center p-2 pb-3">Marked Question</h3>
-            <div class="markedQuestion"></div>
+            <div class="markedQuestion overflow-container"></div>
           </div>
         </div>
       </div>

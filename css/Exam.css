@@ -30,6 +30,7 @@
 
 .head svg:hover {
   color: var(--red-color);
+  cursor: pointer;
 }
 
 .Q1,
@@ -40,15 +41,19 @@
   padding-left: 16px !important;
   border-radius: 8px;
   color: white;
+  cursor: pointer;
 }
 
 .Q1:hover,
 .Q2:hover,
 .Q3:hover,
 .Q4:hover {
-  background-color: rgb(91, 188, 188);
+  background-color: rgb(44, 67, 67);
 }
 
+.active {
+  background-color: rgb(44, 67, 67);
+}
 .prev,
 .next {
   width: 30px;
@@ -58,6 +63,7 @@
   justify-content: center;
   border-radius: 50%;
   border: 1px solid rgb(44, 67, 67);
+  cursor: pointer;
 }
 .prev:hover,
 .next:hover {
@@ -66,6 +72,7 @@
 
 .marked {
   border-radius: 8px;
+  cursor: pointer;
 }
 .marked svg {
   color: var(--red-color);
@@ -89,6 +96,25 @@
     margin-bottom: 25px;
   }
 }
-.active {
-  background-color: red;
+
+.overflow-container {
+  max-height: 330px;
+  overflow-y: auto;
+}
+
+#submit button {
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  outline: none;
+}
+
+#submit button:hover {
+  background-color: white;
+  color: rgb(169, 67, 187);
+  transform: scale(1.1);
 }

@@ -6,8 +6,8 @@
     "c": "var = myVariable",
     "d": " constant myVariable",
     "right_answer": "let myVariable"
+    ,"chosen_answer":null
   },
-
   {
     "question": " Which of the following is NOT a JavaScript data type?",
     "A": "String",
@@ -15,6 +15,7 @@
     "c": "Array",
     "d": "Boolean",
     "right_answer": "Array"
+    ,"chosen_answer":null
   },
   {
     "question": "What is the output of console.log(2 + \"2\")",
@@ -23,6 +24,7 @@
     "c": "NaN",
     "d": "undefined",
     "right_answer": 22
+    ,"chosen_answer":null
   },
   {
     "question": " Which method is used to remove the last element from an array?",
@@ -31,6 +33,7 @@
     "c": "shift()",
     "d": "unshift()",
     "right_answer": "pop()"
+    ,"chosen_answer":null
   },
   {
     "question": "What will typeof null return?",
@@ -39,6 +42,7 @@
     "c": "object",
     "d": "number",
     "right_answer": "object"
+    ,"chosen_answer":null
   },
   {
     "question": "Which of the following is used to define an immediately invoked function in JavaScript?",
@@ -47,6 +51,7 @@
     "c": "(() => { })()",
     "d": "Both b and c",
     "right_answer": "Both b and c"
+    ,"chosen_answer":null
   },
   {
     "question": "How do you call a function named myFunction in JavaScript?",
@@ -55,6 +60,7 @@
     "c": "call function myFunction()",
     "d": "myFunction",
     "right_answer": "myFunction()"
+    ,"chosen_answer":null
   },
   {
     "question": "Which of the following statements is true about const?",
@@ -63,6 +69,7 @@
     "c": "const variables are block-scoped",
     "d": "Both a and c",
     "right_answer": "Both a and c"
+    ,"chosen_answer":null
   },
   {
     "question": "What is the purpose of the isNaN() function in JavaScript?",
@@ -71,6 +78,7 @@
     "c": "To convert a string to a number",
     "d": " To round a number to the nearest integer",
     "right_answer": "To check if a value is not a number"
+    ,"chosen_answer":null
   },
   {
     "question": "Which symbol is used for comments in JavaScript?",
@@ -79,6 +87,7 @@
     "c": "Both a and b",
     "d": "# for comments",
     "right_answer": "Both a and b"
+    ,"chosen_answer":null
   },
   {
     "question": "What will the output of console.log(typeof []) be?",
@@ -87,6 +96,7 @@
     "c": "undefined",
     "d": "null",
     "right_answer": "object"
+    ,"chosen_answer":null
   },
   {
     "question": "Which method is used to combine two or more arrays in JavaScript?",
@@ -95,6 +105,7 @@
     "c": "push()",
     "d": "merge()",
     "right_answer": "concat()"
+    ,"chosen_answer":null
   },
   {
     "question": "How do you declare a constant variable in JavaScript?",
@@ -103,6 +114,7 @@
     "c": "const constVariable",
     "d": "let constVariable",
     "right_answer": "const constVariable"
+    ,"chosen_answer":null
   },
   {
     "question": "What does the DOM stand for in JavaScript?",
@@ -111,6 +123,7 @@
     "c": "Document Oriented Module",
     "d": "Data Organization Model",
     "right_answer": "Document Object Model"
+    ,"chosen_answer":null
   },
   {
     "question": "Which method is used to convert a JSON string into a JavaScript object?",
@@ -119,6 +132,7 @@
     "c": "JSON.objectify()",
     "d": "JSON.convert()",
     "right_answer": "JSON.parse()"
+    ,"chosen_answer":null
   },
   {
     "question": "What is the result of 0.1 + 0.2 === 0.3 in JavaScript?",
@@ -127,6 +141,7 @@
     "c": "undefined",
     "d": "NaN",
     "right_answer": "false"
+    ,"chosen_answer":null
   },
   {
     "question": "Which keyword is used to define a class in JavaScript?",
@@ -135,6 +150,7 @@
     "c": "constructor",
     "d": "object",
     "right_answer": "class"
+    ,"chosen_answer":null
   },
   {
     "question": "What does the 'this' keyword refer to in JavaScript?",
@@ -143,6 +159,7 @@
     "c": "Depends on the execution context",
     "d": "A specific variable",
     "right_answer": "Depends on the execution context"
+    ,"chosen_answer":null
   },
   {
     "question": "Which of the following is a valid way to declare an arrow function?",
@@ -151,5 +168,6 @@
     "c": "() -> { }",
     "d": "arrow() { }",
     "right_answer": "() => { }"
+    ,"chosen_answer":null
   }
 ]
