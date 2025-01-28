@@ -30,8 +30,8 @@ body {
   margin-bottom: 10px;
 }
 
-#user > span{
-  color:rgb(100, 51, 108);
+#user > span {
+  color: rgb(100, 51, 108);
 }
 
 img {
@@ -45,7 +45,7 @@ img {
   background-color: transparent;
   border: 2px solid rgb(169, 67, 187);
   border-radius: 10px;
-  color:  rgb(169, 67, 187);
+  color: rgb(169, 67, 187);
   cursor: pointer;
   font-size: 17px;
   outline: none;
@@ -58,7 +58,7 @@ img {
 }
 
 @media only screen and (max-width: 500px) {
-  .title{
+  .title {
     font-size: 20px;
     margin: 15px;
   }
@@ -71,5 +71,3 @@ img {
     width: 100%;
   }
 }
-
-

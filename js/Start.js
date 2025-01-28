@@ -1,14 +1,20 @@
+
 $(".startBtn").click(function () {
   console.log("amr");
 
   location.replace("../Exam.html");
 });
-console.log($(".start"));
+
+let currentQuestions;
+let questionIndex = 0;
+
 
 window.addEventListener("load", function () {
-  getQuestions();
-  let questionIndex = 0;
-  this.window.localStorage.setItem("questionIndex", 0);
+  if (this.localStorage.getItem("QuestionsArr")) {
+    currentQuestions = JSON.parse(this.localStorage.getItem("QuestionsArr"));
+  } else {
+    getQuestions();
+  }
 });
 
 async function getQuestions() {
@@ -23,32 +29,27 @@ async function getQuestions() {
 
     // Check if the response is okay
     if (!questionsResponse.ok) {
-      throw new Error(
-        "Failed to fetch questions. HTTP status: " + questionsResponse.status
-      );
+      // location.replace("")//navigate to error screen
     }
 
     // Parse JSON data
     let questionsArr = await questionsResponse.json();
     // Check if the array is empty
     if (questionsArr.length === 0) {
+      // location.replace("")//navigate to error screen
       status = "empty"; // No questions found
       console.log("Status:", status);
     } else {
       // If data is available, update status
       status = "success";
       console.log("Status:", status);
-
       currentQuestions = [...getTenRundomQuestions(questionsArr)];
-      window.localStorage.setItem(
-        "QuestionsArr",
-        JSON.stringify(currentQuestions)
-      );
       console.log(currentQuestions);
     }
   } catch (error) {
     // Update status on error
     status = "error";
+    // location.replace("")//navigate to error screen
     console.error("Status:", status, "| Error Message:", error.message);
   }
 }
@@ -61,3 +62,9 @@ function getTenRundomQuestions(arr) {
   } while (randomArray.size < 10);
   return randomArray;
 }
+
+$(".start").click(function () {
+  window.localStorage.setItem("QuestionsArr", JSON.stringify(currentQuestions));
+  window.localStorage.setItem("questionIndex", 0);
+  location.replace("../Exam.html");
+});

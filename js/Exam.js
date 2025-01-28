@@ -1,5 +1,5 @@
 var displayTime = $(".clock"); /**document.getElementsByTagName("h3")[0]; */
-const totalTime = 5 * 60; // (5 minutes)
+const totalTime = 50; // (5 minutes)
 let intervalId; // ref to the time upadting to enbale me of claring the time later
 
 window.addEventListener("load", function () {
@@ -32,7 +32,7 @@ function updateTime() {
     clearInterval(intervalId);
     localStorage.removeItem("FinishTime"); // Clear end time when timer is done
     displayTime.html("Time's up!"); // navigate to result page
-     clearAllLocalStorage();
+    clearAllLocalStorage();
     navigateTo("../Timeout.html"); // navigate her to time out screens
   } else {
     let minutes = Math.floor(remainingTime / 60);
@@ -164,12 +164,12 @@ function showMarked(questionFlags) {
                 <div name="${
                   element + 1
                 }" ><i class="fa-solid fa-trash"></i></div>
-              </div>);
-      class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
-      >
-      <p class="mt-2">Question Q${element + 1}</p>
-      <div name="${element + 1}" ><i class="fa-solid fa-trash"></i></div>
-      </div>`);
+              </div>`);
+    // class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
+    // >
+    // <p class="mt-2">Question Q${element + 1}</p>
+    // <div name="${element + 1}" ><i class="fa-solid fa-trash"></i></div>
+    // </div>`);
   });
 }
 /**************************************************************************************************************************/
