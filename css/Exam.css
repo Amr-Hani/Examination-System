@@ -1,0 +1,142 @@
+:root {
+  --red-color: red;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.exam {
+  height: 100vh;
+  background-color: rgb(247, 229, 251);
+}
+.content {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.content h3{
+  color: rgb(170, 100, 182);
+}
+
+.marked{
+  background-color: white;
+}
+
+.marked p {
+  color: rgb(170, 100, 182) ;
+  font-weight: bold;
+}
+
+.sideBar {
+  background-color: rgb(170, 100, 182);
+  height: 430px;
+  border-radius: 25px;
+}
+.sideBar h3 {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.head {
+  background-color:  rgb(170, 100, 182);
+  border-radius: 8px;
+  color: white;
+}
+
+.head svg:hover {
+  color: var(--red-color);
+  cursor: pointer;
+}
+
+.Q1,
+.Q2,
+.Q3,
+.Q4 {
+  background-color:  rgb(246, 230, 250);
+  padding-left: 16px !important;
+  border-radius: 8px;
+  color:  rgb(170, 100, 182);
+  cursor: pointer;
+}
+
+/* .Q1:hover,
+.Q2:hover,
+.Q3:hover,
+.Q4:hover {
+  background-color: rgb(170, 100, 182);
+} */
+
+.active {
+  background-color:  rgba(170, 100, 182, 0.586);
+  color: white;
+}
+.prev,
+.next {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid  rgb(170, 100, 182);
+  cursor: pointer;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgb(170, 100, 182);
+}
+
+.marked {
+  border-radius: 8px;
+  cursor: pointer;
+}
+.marked svg {
+  color: var(--red-color);
+}
+
+/* .marked svg:hover {
+  color: rgb(201, 21, 21);
+} */
+
+@media (max-width: 768px) {
+  .exam {
+    height: auto;
+  }
+  .content {
+    margin-top: 25px;
+    border-radius: 25px;
+    width: 100%;
+  }
+  .sideBar {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+.overflow-container {
+  max-height: 330px;
+  overflow-y: auto;
+}
+
+#submit button {
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px solid rgb(170, 100, 182);
+  border-radius: 10px;
+  color: rgb(170, 100, 182);
+  cursor: pointer;
+  font-size: 17px;
+  outline: none;
+}
+
+#submit button:hover {
+  background-color:  rgb(170, 100, 182);
+  color: white;
+  /* color: rgb(169, 67, 187); */
+  transform: scale(1.1);
+}
+
+.activeFlag {
+  color: red !important;
+}

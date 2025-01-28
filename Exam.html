@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="css/Exam.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="exam d-flex align-items-center justify-content-center">
+      <div class="container">
+        <div
+          class="box d-flex flex-column align-items-center justify-content-center flex-md-row gap-4"
+        >
+          <div class="content col-lg-9 col-md-9 p-4">
+            <div class="time d-flex gap-2 mb-2">
+              <div class="icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="clock"></div>
+            </div>
+            <h3 class="mb-3">Choose the correct answer</h3>
+            <div class="questions d-flex flex-column gap-3">
+              <div class="head d-flex justify-content-between p-3">
+                <p class="mb-0 question"></p>
+                <div><i class="fa-solid fa-flag"></i></div>
+              </div>
+              <div class="choices d-flex flex-column gap-3">
+                <div name="A" class="Q1 p-2"></div>
+                <div name="B" class="Q2 p-2"></div>
+                <div name="C" class="Q3 p-2"></div>
+                <div name="D" class="Q4 p-2"></div>
+              </div>
+              <div class="d-flex justify-content-center gap-3">
+                <div class="prev">
+                  <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <p><span class="count">1</span> / 10</p>
+                <div class="next">
+                  <i class="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+            </div>
+            <div id="submit">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+          <div class="sideBar col-lg-3 col-md-3 p-3">
+            <h3 class="text-center p-2 pb-3">Marked Question</h3>
+            <div class="markedQuestion overflow-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js.map"></script> -->
+    <script src="js/Exam.js"></script>
+  </body>
+</html>
