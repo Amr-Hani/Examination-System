@@ -86,6 +86,12 @@ function displayQuestions(questionIndex) {
   chooseC.innerHTML = currentQuestions[questionIndex].c;
   chooseD.innerHTML = currentQuestions[questionIndex].d;
   counter.innerHTML = `${questionIndex + 1}`;
+
+  $(".head div").removeClass("activeFlag");
+  if (questionFlags.has(questionIndex)) {
+    $(".head div").addClass("activeFlag");
+  }
+
   let answer = localStorage.getItem(questionIndex);
   removeActiv();
   if (answer) {
@@ -105,7 +111,7 @@ function displayQuestions(questionIndex) {
     }
   }
 }
-/************************************************************************************************************************ */
+/**************************************************************************************************************************/
 let prevQuestion = document.getElementsByClassName("prev")[0];
 let nextQuestion = document.getElementsByClassName("next")[0];
 
@@ -124,7 +130,7 @@ nextQuestion.addEventListener("click", function () {
     window.localStorage.setItem("questionIndex", questionIndex);
   }
 });
-/*************************************************************************************************************************** */
+/**************************************************************************************************************************/
 // localStorage.removeItem("questionFlags");
 let questionFlags = new Set();
 let questionChoicess = localStorage.getItem("questionFlags");
@@ -133,12 +139,18 @@ if (questionChoicess) {
 }
 showMarked(questionFlags);
 $(".head div").click(function () {
-  console.log(questionIndex);
   questionFlags.add(questionIndex);
   let questionArr = JSON.stringify(Array.from(questionFlags));
-  console.log(questionFlags);
-  console.log(questionArr);
   localStorage.setItem("questionFlags", questionArr);
+  if ($(".head div").hasClass("activeFlag")) {
+    $(".head div").removeClass("activeFlag");
+    $(".markedQuestion div").remove();
+    questionFlags.delete(questionIndex);
+    let questionArr = JSON.stringify(Array.from(questionFlags));
+    localStorage.setItem("questionFlags", questionArr);
+  } else {
+    $(".head div").addClass("activeFlag");
+  }
   showMarked(questionFlags);
 });
 
@@ -153,9 +165,14 @@ function showMarked(questionFlags) {
                   element + 1
                 }" ><i class="fa-solid fa-trash"></i></div>
               </div>`);
+      class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
+      >
+      <p class="mt-2">Question Q${element + 1}</p>
+      <div name="${element + 1}" ><i class="fa-solid fa-trash"></i></div>
+      </div>`);
   });
 }
-/******************************************************************************************************************* */
+/**************************************************************************************************************************/
 //عندكو هنا مشكله في ال current و ال question index >> مش عارف احط انهي واحد ف الاتنين ف ال local storage hena
 $(".markedQuestion").on("click", "div svg", function () {
   let currentIndex = Number($(this.parentElement).attr("name"));
@@ -164,6 +181,7 @@ $(".markedQuestion").on("click", "div svg", function () {
   this.parentElement.parentElement.remove();
   let questionArr = JSON.stringify(Array.from(questionFlags));
   localStorage.setItem("questionFlags", questionArr);
+  $(".head div").removeClass("activeFlag");
 });
 
 $(".markedQuestion").on("click", ".marked", function (e) {

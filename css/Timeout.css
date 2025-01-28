@@ -4,6 +4,7 @@
 }
 
 body {
+
   background-color: rgb(247, 229, 251);
   height: 100vh;
   display: flex;
@@ -16,6 +17,14 @@ body {
   width: 100%;
   height: 90%;
   margin: auto;
+  background-color: rgb(206, 171, 212);
+  /* height: 100%; */
+}
+
+.container {
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .title,
@@ -65,3 +74,5 @@ img {
     width: 100%;
   }
 }
+}
+

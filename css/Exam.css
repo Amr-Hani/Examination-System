@@ -37,6 +37,7 @@
   color: white;
   border-bottom: 1px solid white;
 }
+
 .head {
   background-color:  rgb(170, 100, 182);
   border-radius: 8px;
@@ -134,4 +135,8 @@
   color: white;
   /* color: rgb(169, 67, 187); */
   transform: scale(1.1);
+}
+
+.activeFlag {
+  color: red !important;
 }
