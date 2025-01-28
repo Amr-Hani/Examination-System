@@ -88,6 +88,7 @@ function displayQuestions(questionIndex) {
   counter.innerHTML = `${questionIndex + 1}`;
 
   $(".head div").removeClass("activeFlag");
+
   if (questionFlags.has(questionIndex)) {
     $(".head div").addClass("activeFlag");
   }
