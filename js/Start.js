@@ -21,28 +21,27 @@ async function getQuestions() {
 
     // Check if the response is okay
     if (!questionsResponse.ok) {
-      throw new Error(
-        "Failed to fetch questions. HTTP status: " + questionsResponse.status
-      );
+      // location.replace("")//navigate to error screen
     }
 
     // Parse JSON data
     let questionsArr = await questionsResponse.json();
     // Check if the array is empty
     if (questionsArr.length === 0) {
+      // location.replace("")//navigate to error screen
       status = "empty"; // No questions found
       console.log("Status:", status);
     } else {
       // If data is available, update status
       status = "success";
       console.log("Status:", status);
-
       currentQuestions = [...getTenRundomQuestions(questionsArr)];
       console.log(currentQuestions);
     }
   } catch (error) {
     // Update status on error
     status = "error";
+    // location.replace("")//navigate to error screen
     console.error("Status:", status, "| Error Message:", error.message);
   }
 }
