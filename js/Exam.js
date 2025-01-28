@@ -1,5 +1,5 @@
 var displayTime = $(".clock"); /**document.getElementsByTagName("h3")[0]; */
-const totalTime = 50; // (5 minutes)
+const totalTime = 5 * 60; // (5 minutes)
 let intervalId; // ref to the time upadting to enbale me of claring the time later
 
 window.addEventListener("load", function () {
@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
   );
   questionIndex = Number(this.window.localStorage.getItem("questionIndex"));
   displayQuestions(questionIndex);
+  updateButtonState();
 });
 function updateTime() {
   let CurrentTime = new Date().getTime(); // Current time in milliseconds
@@ -114,13 +115,13 @@ function displayQuestions(questionIndex) {
 /**************************************************************************************************************************/
 let prevQuestion = document.getElementsByClassName("prev")[0];
 let nextQuestion = document.getElementsByClassName("next")[0];
-
 prevQuestion.addEventListener("click", function () {
   if (questionIndex > 0) {
     questionIndex--;
     displayQuestions(questionIndex);
     window.localStorage.setItem("questionIndex", questionIndex);
   }
+  updateButtonState();
 });
 
 nextQuestion.addEventListener("click", function () {
@@ -129,7 +130,23 @@ nextQuestion.addEventListener("click", function () {
     displayQuestions(questionIndex);
     window.localStorage.setItem("questionIndex", questionIndex);
   }
+  updateButtonState();
 });
+
+function updateButtonState() {
+  if (questionIndex == 0) {
+    prevQuestion.classList.add("disable"); // Disable backward button
+  } else {
+    prevQuestion.classList.remove("disable");
+  }
+
+  if (questionIndex == 9) {
+    nextQuestion.classList.add("disable"); // Disable forward button
+    console.log("amr");
+  } else {
+    nextQuestion.classList.remove("disable");
+  }
+}
 /**************************************************************************************************************************/
 // localStorage.removeItem("questionFlags");
 let questionFlags = new Set();
@@ -273,4 +290,5 @@ function clearAllLocalStorage() {
 function navigateTo(screen) {
   location.replace(screen);
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////

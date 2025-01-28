@@ -15,16 +15,16 @@
   border-radius: 10px;
 }
 
-.content h3{
+.content h3 {
   color: rgb(170, 100, 182);
 }
 
-.marked{
+.marked {
   background-color: white;
 }
 
 .marked p {
-  color: rgb(170, 100, 182) ;
+  color: rgb(170, 100, 182);
   font-weight: bold;
 }
 
@@ -39,13 +39,13 @@
 }
 
 .head {
-  background-color:  rgb(170, 100, 182);
+  background-color: rgb(170, 100, 182);
   border-radius: 8px;
   color: white;
 }
 
 .head svg:hover {
-  color: var(--red-color);
+  color: rgb(255, 205, 6);
   cursor: pointer;
 }
 
@@ -53,10 +53,10 @@
 .Q2,
 .Q3,
 .Q4 {
-  background-color:  rgb(246, 230, 250);
+  background-color: rgb(246, 230, 250);
   padding-left: 16px !important;
   border-radius: 8px;
-  color:  rgb(170, 100, 182);
+  color: rgb(170, 100, 182);
   cursor: pointer;
 }
 
@@ -68,7 +68,7 @@
 } */
 
 .active {
-  background-color:  rgba(170, 100, 182, 0.586);
+  background-color: rgba(170, 100, 182, 0.586);
   color: white;
 }
 .prev,
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid  rgb(170, 100, 182);
+  border: 1px solid rgb(170, 100, 182);
   cursor: pointer;
 }
 .prev:hover,
@@ -95,9 +95,9 @@
   color: var(--red-color);
 }
 
-/* .marked svg:hover {
+.marked svg:hover {
   color: rgb(201, 21, 21);
-} */
+}
 
 @media (max-width: 768px) {
   .exam {
@@ -130,13 +130,10 @@
   outline: none;
 }
 
-#submit button:hover {
-  background-color:  rgb(170, 100, 182);
-  color: white;
-  /* color: rgb(169, 67, 187); */
-  transform: scale(1.1);
+.activeFlag {
+  color: rgb(255, 205, 6) !important;
 }
 
-.activeFlag {
-  color: red !important;
+.disable {
+  background-color: rgb(170, 100, 182);
 }
