@@ -1,35 +1,41 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(206, 171, 212);
+  background-color: rgb(247, 229, 251);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
+.row {
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    padding-right: 0;
+  padding-right: 0;
+  overflow: hidden;
 }
 
 .title {
-  color: rgb(70, 20, 79);
+  color: rgb(99, 24, 112);
   margin-top: 5px;
   text-align: center;
 }
 
-.box h5 {
+.row h5 {
   color: rgb(169, 67, 187);
 }
 
-.box p {
-  color: white;
+.row p {
+  color: rgb(79, 79, 79);
   margin-left: 10px;
 }
 
-.box button {
+.row button {
   margin: 15px auto;
   padding: 10px 30px;
   background-color: transparent;
@@ -40,20 +46,31 @@ body {
   outline: none;
 }
 
-.box button:hover {
-    background-color:  white;
-    color: rgb(169, 67, 187);
-    transform: scale(1.1);
+.row button:hover {
+  background-color: white;
+  color: rgb(169, 67, 187);
+  transform: scale(1.1);
 }
 
-.start-img img{
-    width: 100%;
-    border-radius: 25px;
+.start-img {
+  margin: 0;
+  padding: 0;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
+.start-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
 
-@media only screen and (max-width : 1000px){
-    .start-img{
-        display: none;
-    }
+@media only screen and (max-width: 950px) {
+  .rules {
+    flex-direction: column;
   }
+  .start-img {
+    display: none;
+  }
+}

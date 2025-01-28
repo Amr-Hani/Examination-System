@@ -1,5 +1,13 @@
+
+$(".startBtn").click(function () {
+  console.log("amr");
+
+  location.replace("../Exam.html");
+});
+
 let currentQuestions;
 let questionIndex = 0;
+
 
 window.addEventListener("load", function () {
   if (this.localStorage.getItem("QuestionsArr")) {

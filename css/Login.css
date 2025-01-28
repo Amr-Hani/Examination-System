@@ -1,43 +1,40 @@
-/* background-color: rgb(186,104,200);
- rgb(169, 67, 187)
-  */
-
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(206, 171, 212);
+  background-color: rgb(247, 229, 251);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
-  width: 75%;
+.box {
+  background-color: rgb(247, 229, 251);
 }
 
-.login {
-  /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-  /* width: 65%; */
-  /* margin: 100px auto; */
-  /* border-radius: 25px; */
-  padding: 0;
+.login{
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    overflow: hidden;
 }
 
-/* .login-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
+.login-img{
+  margin: 0;
+  padding: 0;
+  border-radius: 25px;
+  overflow: hidden;
+}
 
 .login-img img {
   width: 100%;
-  border-radius: 25px;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
 }
 
 .title {
@@ -45,26 +42,27 @@ body {
 }
 
 #logIn {
-  color: white;
-  width: 80%;
+  color: rgb(169, 67, 187);
+  width: 100%;
+  max-width: 350px;
 }
+
 
 #logIn label {
   display: inline-block;
-  margin: 10px 20px;
+  margin-bottom: 5px;
   font-size: 18px;
 }
 
 #logIn input {
   display: block;
-  width: 80%;
-  height: 30px;
   padding: 5px;
-  margin: 0 20px;
-  border: 2px solid rgb(169, 67, 187);
   border-radius: 10px;
-  background-color: white;
   outline: none;
+  border: 2px solid rgb(169, 67, 187);
+  max-width: 350px;
+  min-width: 280px;
+  background-color: white;
 }
 
 #logIn button {
@@ -72,27 +70,29 @@ body {
   margin: 30px auto;
   padding: 10px 30px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid rgb(169, 67, 187);
   border-radius: 10px;
-  color: white;
+  color: rgb(169, 67, 187);
   cursor: pointer;
   font-size: 17px;
   outline: none;
 }
 
 #logIn button:hover {
-  background-color: white;
-  color: rgb(169, 67, 187);
+  background-color: rgb(169, 67, 187);
+  color: white;
   transform: scale(1.1);
 }
 
-.req {
+.emailError,
+.passwordError {
   color: red;
+  font-size: 14px;
 }
 
 .signin {
   display: flex;
-  color: white;
+  color: rgb(169, 67, 187);
 }
 
 .signin span {
@@ -104,6 +104,9 @@ body {
 }
 
 @media only screen and (max-width: 950px) {
+  .login{
+    flex-direction: column;
+  }
   .login-img {
     display: none;
   }
