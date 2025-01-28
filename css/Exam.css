@@ -1,20 +1,35 @@
 :root {
   --red-color: red;
 }
+
 * {
   padding: 0;
   margin: 0;
 }
 .exam {
   height: 100vh;
+  background-color: rgb(247, 229, 251);
 }
 .content {
-  background-color: aqua;
+  background-color: white;
   border-radius: 10px;
 }
 
+.content h3{
+  color: rgb(170, 100, 182);
+}
+
+.marked{
+  background-color: white;
+}
+
+.marked p {
+  color: rgb(170, 100, 182) ;
+  font-weight: bold;
+}
+
 .sideBar {
-  background-color: rgb(44, 67, 67);
+  background-color: rgb(170, 100, 182);
   height: 430px;
   border-radius: 25px;
 }
@@ -24,7 +39,7 @@
 }
 
 .head {
-  background-color: rgb(46, 170, 170);
+  background-color:  rgb(170, 100, 182);
   border-radius: 8px;
   color: white;
 }
@@ -38,22 +53,23 @@
 .Q2,
 .Q3,
 .Q4 {
-  background-color: rgb(46, 170, 170);
+  background-color:  rgb(246, 230, 250);
   padding-left: 16px !important;
   border-radius: 8px;
-  color: white;
+  color:  rgb(170, 100, 182);
   cursor: pointer;
 }
 
-.Q1:hover,
+/* .Q1:hover,
 .Q2:hover,
 .Q3:hover,
 .Q4:hover {
-  background-color: rgb(44, 67, 67);
-}
+  background-color: rgb(170, 100, 182);
+} */
 
 .active {
-  background-color: rgb(44, 67, 67);
+  background-color:  rgba(170, 100, 182, 0.586);
+  color: white;
 }
 .prev,
 .next {
@@ -63,12 +79,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgb(44, 67, 67);
+  border: 1px solid  rgb(170, 100, 182);
   cursor: pointer;
 }
 .prev:hover,
 .next:hover {
-  background-color: rgb(46, 170, 170);
+  background-color: rgb(170, 100, 182);
 }
 
 .marked {
@@ -79,9 +95,9 @@
   color: var(--red-color);
 }
 
-.marked svg:hover {
+/* .marked svg:hover {
   color: rgb(201, 21, 21);
-}
+} */
 
 @media (max-width: 768px) {
   .exam {
@@ -106,17 +122,18 @@
 #submit button {
   padding: 10px 30px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid rgb(170, 100, 182);
   border-radius: 10px;
-  color: white;
+  color: rgb(170, 100, 182);
   cursor: pointer;
   font-size: 17px;
   outline: none;
 }
 
 #submit button:hover {
-  background-color: white;
-  color: rgb(169, 67, 187);
+  background-color:  rgb(170, 100, 182);
+  color: white;
+  /* color: rgb(169, 67, 187); */
   transform: scale(1.1);
 }
 

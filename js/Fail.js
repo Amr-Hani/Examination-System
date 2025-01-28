@@ -1,15 +1,12 @@
-$(".container").animate(
-  {
-    width: "80%",
-  },
-  2000
-);
-
-let users = localStorage.getItem("CurrentUser");
+let users = localStorage.getItem("CurrentUser");       //get name of user from local storage
+let result = localStorage.getItem("result") * 10;       // get result from local storage and multiply it by 10
 console.log(users);
 
+let userName = document.getElementById("user-name");
 let user = document.getElementById("user");
-user.innerHTML = `Sorry, <span>${users}</span> Time Out...`;
+
+userName.innerHTML = `Sorry <span>${users}</span>`;
+user.innerHTML = `You Failed in The Quiz, <span class="fail">${result}%</span>`;
 
 /*************************************************************************************************************/
 

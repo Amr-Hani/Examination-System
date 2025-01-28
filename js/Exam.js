@@ -1,5 +1,5 @@
 var displayTime = $(".clock"); /**document.getElementsByTagName("h3")[0]; */
-const totalTime = 5 * 60; // (5 minutes)
+const totalTime = 50; // (5 minutes)
 let intervalId; // ref to the time upadting to enbale me of claring the time later
 
 window.addEventListener("load", function () {
@@ -18,8 +18,8 @@ function updateTime() {
     localStorage.removeItem("FinishTime");
     displayTime.html("Time's up!");
     // here should aslo navigate to result page
-    // clearAllLocalStorage();
-    // navigateTo(""); // navigate her to time out screens
+    clearAllLocalStorage();
+    navigateTo("../Timeout.html"); // navigate her to time out screens
     return; // 3shan mkmlsh ba2y el function
   }
 
@@ -32,8 +32,8 @@ function updateTime() {
     clearInterval(intervalId);
     localStorage.removeItem("FinishTime"); // Clear end time when timer is done
     displayTime.html("Time's up!"); // navigate to result page
-    //  clearAllLocalStorage();
-    // navigateTo(""); // navigate her to time out screens
+    clearAllLocalStorage();
+    navigateTo("../Timeout.html"); // navigate her to time out screens
   } else {
     let minutes = Math.floor(remainingTime / 60);
     let seconds = remainingTime % 60;
@@ -88,7 +88,6 @@ function displayQuestions(questionIndex) {
   counter.innerHTML = `${questionIndex + 1}`;
 
   $(".head div").removeClass("activeFlag");
-
   if (questionFlags.has(questionIndex)) {
     $(".head div").addClass("activeFlag");
   }
@@ -159,11 +158,18 @@ function showMarked(questionFlags) {
   $(".marked").remove();
   questionFlags.forEach((element) => {
     $(".markedQuestion").append(`<div
-      class="marked d-flex align-items-center justify-content-between bg-light m-2 ps-2 pe-2 p-1"
-      >
-      <p class="mt-2">Question Q${element + 1}</p>
-      <div name="${element + 1}" ><i class="fa-solid fa-trash"></i></div>
-      </div>`);
+                class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
+              >
+                <p class="mt-2">Question Q${element + 1}</p>
+                <div name="${
+                  element + 1
+                }" ><i class="fa-solid fa-trash"></i></div>
+              </div>`);
+    // class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
+    // >
+    // <p class="mt-2">Question Q${element + 1}</p>
+    // <div name="${element + 1}" ><i class="fa-solid fa-trash"></i></div>
+    // </div>`);
   });
 }
 /**************************************************************************************************************************/
@@ -220,9 +226,9 @@ $("#submit").click(() => {
   localStorage.setItem("result", result);
   clearAllLocalStorage();
   if (result >= 6) {
-    // navigateTo(""); // navigate her to result screens (pass)
+    navigateTo("../Success.html"); // navigate her to result screens (pass)
   } else {
-    // navigateTo(""); // navigate her to result screens (fail)
+    navigateTo("../Fail.html"); // navigate her to result screens (pass)
   }
 });
 

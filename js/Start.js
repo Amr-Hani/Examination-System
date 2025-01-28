@@ -1,11 +1,12 @@
-$(".start").click(function () {
-  location.replace("../Exam.html");
-});
+let currentQuestions;
+let questionIndex = 0;
 
 window.addEventListener("load", function () {
-  getQuestions();
-  let questionIndex = 0;
-  this.window.localStorage.setItem("questionIndex", 0);
+  if (this.localStorage.getItem("QuestionsArr")) {
+    currentQuestions = JSON.parse(this.localStorage.getItem("QuestionsArr"));
+  } else {
+    getQuestions();
+  }
 });
 
 async function getQuestions() {
@@ -37,10 +38,6 @@ async function getQuestions() {
       console.log("Status:", status);
 
       currentQuestions = [...getTenRundomQuestions(questionsArr)];
-      window.localStorage.setItem(
-        "QuestionsArr",
-        JSON.stringify(currentQuestions)
-      );
       console.log(currentQuestions);
     }
   } catch (error) {
@@ -58,3 +55,9 @@ function getTenRundomQuestions(arr) {
   } while (randomArray.size < 10);
   return randomArray;
 }
+
+$(".start").click(function () {
+  window.localStorage.setItem("QuestionsArr", JSON.stringify(currentQuestions));
+  window.localStorage.setItem("questionIndex", 0);
+  location.replace("../Exam.html");
+});
