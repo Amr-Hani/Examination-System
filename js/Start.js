@@ -1,6 +1,9 @@
-$(".start").click(function () {
+$(".startBtn").click(function () {
+  console.log("amr");
+
   location.replace("../Exam.html");
 });
+console.log($(".start"));
 
 window.addEventListener("load", function () {
   getQuestions();

@@ -164,7 +164,7 @@ function showMarked(questionFlags) {
                 <div name="${
                   element + 1
                 }" ><i class="fa-solid fa-trash"></i></div>
-              </div>`);
+              </div>);
       class="marked d-flex align-items-center justify-content-between m-2 ps-2 pe-2 p-1"
       >
       <p class="mt-2">Question Q${element + 1}</p>

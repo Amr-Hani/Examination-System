@@ -11,39 +11,43 @@
   </head>
   <body>
     <div
-      class="container d-flex justify-content-between mt-5 align-items-center rounded-5 login"
+      class="container d-flex justify-content-center align-items-center vh-100"
     >
-      <div class="col-lg-6 login-img">
-        <img src="./Images/login.gif" alt="" />
-      </div>
       <div
-        class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center p-5 login-form"
+        class="row rounded-5 login"
       >
-        <h1 class="title">Log In</h1>
-        <form method="post" id="logIn">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email"
-            id="email"
-          />
-          <p class="emailError"></p>
+        <div class="col-lg-6 d-md-none d-lg-block login-img">
+          <img src="./Images/login.gif" alt="" class=" "/>
+        </div>
+        <div
+          class="col-lg-6 d-flex flex-column justify-content-center align-items-center p-5 gap-2 login-form"
+        >
+          <h1 class="title">Log In</h1>
+          <form method="post" id="logIn">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Your Email"
+              id="email"
+            />
+            <p class="emailError"></p>
 
-          <label for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            id="password"
-          />
-          <p class="passwordError"></p>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              id="password"
+            />
+            <p class="passwordError"></p>
 
-          <button type="submit">Sign In</button>
-        </form>
-        <div class="signin">
-          <p>Don't have an account ?</p>
-          <span id="signup-page"> Sign Up</span>
+            <button type="submit">Sign In</button>
+          </form>
+          <div class="signin">
+            <p>Don't have an account?</p>
+            <span id="signup-page"> Sign Up</span>
+          </div>
         </div>
       </div>
     </div>
